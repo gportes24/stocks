@@ -12,13 +12,13 @@ df = pd.read_csv('https://github.com/gportes24/stocks/blob/master/sp500_1.csv')
 
 app.layout = html.Div([
     dcc.graph(
-        id ='rolling average'
-        figure = {
+        id ='rolling average',
+        figure={
             'data': [
                 gp.scatter(
-                x=df[df['ticker']==1 ['High'],
-                y=df[df['ticker']==1['Adj Close'],
-                text=df[df['ticker']==['Date'],
+                x=df[df['ticker']==i ['High'],
+                y=df[df['ticker']==i['Adj Close'],
+                text=df[df['ticker']==i]['Date'],
                 mode='markers',
                 opacity =0.7,
                 marker={
