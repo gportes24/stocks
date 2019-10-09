@@ -11,7 +11,7 @@ app.dash.Dash(__name__, external_stylesheets=external_stylesheets)
 df = pd.read_csv('https://github.com/gportes24/stocks/blob/master/sp500_1.csv')
 
 app.layout = html.Div([
-    dcc.graph
+    dcc.graph(
         id ='rolling average'
         figure = {
             'data': [
