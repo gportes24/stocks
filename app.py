@@ -8,25 +8,38 @@ import plotly.graph_objs as go
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgp.css']
 
 app.dash.Dash(__name__, external_stylesheets=external_stylesheets)
-df = pd.read_csv()
-
-
+df = pd.read_csv('https://github.com/gportes24/stocks/blob/master/sp500_1.csv')
 
 app.layout = html.Div([
-    html.H2("Stocks Data"),
-    dcc.Dropdown(
-        id='dropdown',
-        options=[{'label':i, 'value':i} for i in ['GOOG', 'MMM', 'ZTS']],
-        value= 'ZTS'
-    ),
-    html.Div('display-value')
+    dcc.graph
+        id ='rolling average'
+        figure = {
+            'data': [
+                gp.scatter(
+                x=df[df['ticker']==1 ['High'],
+                y=df[df['ticker']==1['Adj Close'],
+                text=df[df['ticker']==['Date'],
+                mode='markers',
+                opacity =0.7,
+                marker={
+                'size': 15,
+                'line':{'width':0.5, 'color':'black'}
+                },
+                name =i
+                )for i in df.ticker.unique()
+                ],
+                'layout': go.Layout(
+                xaxis={'type': 'Log', 'title': 'Rolling Stock Average'},
+                yaxis={'title': 'rolling averag'},
+                margin ={'i': 40, 'b':40, 't': 10, 'r':10},
+                legend={'x': 0, 'y': 1},
+                hovermode = 'closest'
+
+                )
+            )
+        )
+
 ])
-
-app.css.append_css({"external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"})
-
-@app.callback(dash.dependencie.Output('display-values', 'children'),[dash.dependencies.Input('dropdown', 'value')])
-def display_value(value):
-    return 'you have selected "{}"'.format(value)'
 
 
     if __name_-='__main__':
