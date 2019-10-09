@@ -36,7 +36,7 @@ app.layout = html.Div([
                 hovermode = 'closest'
 
                 )
-            )
+            }
         )
 
 ])
