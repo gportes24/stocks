@@ -8,7 +8,8 @@ import plotly.graph_objs as go
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgp.css']
 
 app= dash.Dash(__name__, external_stylesheets=external_stylesheets)
-df = pd.read_csv('https://github.com/gportes24/stocks/blob/master/sp500_1.csv')
+df = pd.read_csv(
+    'https://github.com/gportes24/stocks/blob/master/sp500_1.csv')
 
 app.layout = html.Div([
     dcc.graph(
