@@ -16,8 +16,8 @@ app.layout = html.Div([
         figure={
             'data': [
                 go.scatter(
-                x=df[df['ticker']==i ['High'],
-                y=df[df['ticker']==i['Adj Close'],
+                x=df[df['ticker']==i ]['High'],
+                y=df[df['ticker'] == i]['Adj Close'],
                 text=df[df['ticker']==i]['Date'],
                 mode='markers',
                 opacity =0.7,
