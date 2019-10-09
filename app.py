@@ -12,7 +12,7 @@ df = pd.read_csv(
     'sp500_1.csv')
 
 app.layout = html.Div([
-    dcc.graph(
+    dcc.Graph(
         id ='rolling average',
         figure={
             'data': [
