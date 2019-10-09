@@ -27,7 +27,7 @@ app.layout = html.Div([
                 'line':{'width':0.5, 'color':'black'}
                 },
                 name =i
-                )for i in df.ticker.unique()
+                ) for i in df.ticker.unique()
                 ],
                 'layout': go.Layout(
                 xaxis={'type': 'Log', 'title': 'Rolling Stock Average'},
