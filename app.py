@@ -15,7 +15,7 @@ app.layout = html.Div([
         id ='rolling average',
         figure={
             'data': [
-                gp.scatter(
+                go.scatter(
                 x=df[df['ticker']==i ['High'],
                 y=df[df['ticker']==i['Adj Close'],
                 text=df[df['ticker']==i]['Date'],
